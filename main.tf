@@ -181,6 +181,13 @@ data "aws_iam_policy_document" "bastion_host_policy_document" {
 
 }
 
+resource "aws_iam_role_policy" "bastion_host_role" {
+  name = "bastion_host_role"
+  role = "aws_iam_role.bastion_host_role.id"
+
+  policy = data.aws_iam_policy_document.bastion_host_policy_document.json
+}
+
 
 resource "aws_route53_record" "bastion_record_name" {
   name    = var.bastion_record_name
