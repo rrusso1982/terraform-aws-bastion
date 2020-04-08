@@ -210,6 +210,8 @@ resource "aws_lb" "bastion_lb" {
 
   load_balancer_type = "network"
   tags               = merge(var.tags)
+
+  idle_timeout = 600
 }
 
 resource "aws_lb_target_group" "bastion_lb_target_group" {

@@ -146,6 +146,7 @@ fi
 EOF
 
 chmod 700 /usr/bin/bastion/sync_users
+sed -i 's/^#\s*\(%wheel\s*ALL=(ALL)\s*NOPASSWD:\s*ALL\)/\1/' /etc/sudoers
 
 ###########################################
 ## SCHEDULE SCRIPTS AND SECURITY UPDATES ##
